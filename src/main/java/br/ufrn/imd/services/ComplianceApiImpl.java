@@ -34,7 +34,7 @@ public class ComplianceApiImpl implements ComplianceApi {
     @Override
     public boolean CanItReceiveNewWithdraw(BankAccount account, double value) {
         try {
-            var route = String.format( "api/compliance/account/%s/deposit", account.getId().toString());
+            var route = String.format( "api/compliance/account/%s/withdraw", account.getId().toString());
             var request = createNewRequest(route);
             var response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
